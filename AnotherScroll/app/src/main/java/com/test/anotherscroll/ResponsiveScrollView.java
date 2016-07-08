@@ -19,12 +19,12 @@ public class ResponsiveScrollView extends HorizontalScrollView {
     private int scrollState = SCROLL_STATE_IDLE;
     private int newCheck = 100;
     private OnScrollChangeListener onScrollStoppedListener;
-    private Adapter adapter;
 
     public static final int SCROLL_STATE_IDLE = 0;
     public static final int SCROLL_STATE_DRAGGING = 1;
-
     public static final int SCROLL_STATE_SETTLING = 2;
+
+
     private OnTouchListener onTouchListener = new OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent event) {
@@ -48,17 +48,6 @@ public class ResponsiveScrollView extends HorizontalScrollView {
     public ResponsiveScrollView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
-    }
-
-    public void setAdapter(Adapter adapter) {
-        this.adapter = adapter;
-        Log.d(TAG, "setAdapter: ");
-    }
-
-    @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        Log.d(TAG, "onAttachedToWindow: ");
     }
 
     private void init() {
@@ -98,7 +87,6 @@ public class ResponsiveScrollView extends HorizontalScrollView {
             listener.onScrollStateChanged(this, state);
         }
     }
-
     protected void onScrollChanged() {
         OnScrollChangeListener listener = onScrollStoppedListener;
         if (listener != null) {

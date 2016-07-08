@@ -34,6 +34,7 @@ public class GridElement extends ScrollView {
     public TextView card;
     public int id;
     public TextView body;
+    public float progress;
 
     public GridElement(Context context) {
         super(context);
